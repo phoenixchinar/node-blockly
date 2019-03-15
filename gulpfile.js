@@ -80,6 +80,13 @@ gulp.task('dart', function() {
       .pipe(gulp.dest('lib'))
 });
 
+gulp.task('cpp', function() {
+  return gulp.src('blockly/cpp_compressed.js')
+      .pipe(insert.wrap('module.exports = function(Blockly){', 'return Blockly.Cpp;}'))
+      .pipe(replace(/window\./g, ''))
+      .pipe(gulp.dest('lib'))
+});
+
 gulp.task('python', function() {
   return gulp.src('blockly/python_compressed.js')
       .pipe(insert.wrap('module.exports = function(Blockly){', 'return Blockly.Python;}'))
@@ -114,10 +121,9 @@ gulp.task('build', [
   'js',
   'php',
   'dart',
+  'cpp',
   'python',
   'lua',
 ]);
-
-
 
 
