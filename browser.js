@@ -18,5 +18,6 @@ Blockly.Lua = require('./lib/lua_compressed')(Blockly);
 Blockly.Dart = require('./lib/dart_compressed')(Blockly);
 Blockly.PHP = require('./lib/php_compressed')(Blockly);
 Blockly.Python = require('./lib/python_compressed')(Blockly);
+Blockly.Cpp = require('./lib/cpp_compressed')(Blockly);
 
 module.exports = Blockly;
